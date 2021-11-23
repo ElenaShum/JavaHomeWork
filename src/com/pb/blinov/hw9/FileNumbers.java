@@ -40,7 +40,6 @@ public class FileNumbers {
     public static void createOddNumbersFile(){
         Path path = Paths.get("files/numbers.txt");
         Path path2 = Paths.get("files/odd-numbers.txt");
-        System.out.println("Read text from file \"" + path.toAbsolutePath() + "\":");
         try (Scanner scan = new Scanner(path)) {
             try (BufferedWriter writer = Files.newBufferedWriter(path2)) {
                 int k = 1;
@@ -59,6 +58,23 @@ public class FileNumbers {
 
         } catch (IOException ex) {
             ex.printStackTrace();
+        }
+        show(path);
+        show(path2);
+    }
+
+    private static void show(Path path){
+        System.out.println("Read text from file \"" + path.toAbsolutePath() + "\":");
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            System.out.println("----------------------------------");
+            String line;
+            while((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println("----------------------------------");
+
+        } catch (Exception ex) {
+            System.out.println("Error with file read: " + ex);
         }
     }
 }
