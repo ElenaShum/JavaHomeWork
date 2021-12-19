@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -71,7 +72,7 @@ public class Person {
                 ", phones=" + phones +
                 ", dateOfBirth=" + dateOfBirth +
                 ", address='" + address + '\'' +
-                ", editTime=" + editTime +
+                ", editTime=" + editTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) +
                 '}';
     }
 }
