@@ -29,6 +29,7 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+        this.editTime = LocalDateTime.now();
     }
 
     public HashSet getPhones() {
@@ -37,10 +38,12 @@ public class Person {
 
     public void addPhone(String phone) {
         this.phones.add(phone);
+        this.editTime = LocalDateTime.now();
     }
 
     public void setPhones(HashSet<String> phones) {
         this.phones = phones;
+        this.editTime = LocalDateTime.now();
     }
 
     public LocalDate getDateOfBirth() {
@@ -49,19 +52,31 @@ public class Person {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public Person(String name, String phone, LocalDate dateOfBirth) {
-        this.name = name;
-        this.phones.add(phone);
-        this.dateOfBirth = dateOfBirth;
         this.editTime = LocalDateTime.now();
     }
 
-    public Person(String name, String[] phones, LocalDate dateOfBirth) {
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+        this.editTime = LocalDateTime.now();
+    }
+
+    public Person(String name, String phone, LocalDate dateOfBirth, String address) {
+        this.name = name;
+        this.phones.add(phone);
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.editTime = LocalDateTime.now();
+    }
+
+    public Person(String name, String[] phones, LocalDate dateOfBirth, String address) {
         this.name = name;
         this.phones = new HashSet<>(Arrays.asList(phones));
         this.dateOfBirth = dateOfBirth;
+        this.address = address;
         this.editTime = LocalDateTime.now();
     }
 
