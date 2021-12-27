@@ -20,6 +20,7 @@ public class Adder extends Thread {
                 // Добавляем строки в буфер
                 buffer.add("foo " + i);
                 i++;
+                System.out.println("Добавил");
                 // Будим поток-потребитель
                 monitor.notify();
                 // И засыпаем пока он не обработает строки в буфере
