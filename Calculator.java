@@ -10,38 +10,37 @@ public class Calculator {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Введите первое число ");
+        System.out.println("Введите первое число: ");
         operand1 = sc.nextInt();
 
-        System.out.println("Введите второе число ");
+        System.out.println("Введите второе число: ");
         operand2 = sc.nextInt();
 
-        System.out.println("Введите знак ");
+        System.out.println("Введите знак: ");
         sign = sc.next();
 
-        if (operand2 != 0) {
-            switch (sign) {
-                case "+":
-                    sum = operand1 + operand2;
-                    break;
-                case "-":
-                    sum = operand1 - operand2;
-                    break;
-                case "*":
-                    sum = operand1 * operand2;
-                    break;
-                case "/":
+
+        switch (sign) {
+            case "+":
+                sum = operand1 + operand2;
+                break;
+            case "-":
+                sum = operand1 - operand2;
+                break;
+            case "*":
+                sum = operand1 * operand2;
+                break;
+            case "/":
+                if (operand2 != 0) {
                     sum = operand1 / operand2;
+                } else {
+                    System.out.println("Деление на ноль невозможно");
 
-
-            }
-            System.out.println(sum);
-        } else {
-            System.out.println("Деление на ноль невозможно");
+                }
         }
-
-
+        System.out.println(sum);
     }
+}
 
 
 }
