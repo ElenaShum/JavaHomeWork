@@ -57,13 +57,3 @@ public class Bingo {
 
 
 
-
-
-
-
-//        for (int i = 0; i < 10; i++) {
-//            int x = rand.nextInt(10);
-//            System.out.println(x);
-
-
-
