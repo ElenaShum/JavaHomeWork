@@ -41,11 +41,12 @@ public class Bingo {
 
             if (number < x) {
                 System.out.println("Искомое число больше");
-            }
-
-            if (number != x) {
                 continue;
             }
+
+            //if (number != x) {
+            //    continue;
+            //}
 
             System.out.println("Вы угадали с " + attempt + " попытки");
             break;
