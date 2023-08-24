@@ -17,16 +17,16 @@ public class BubbleSort {
         }
 
         boolean isSorted = false;
-        int m = 0;
+        int tmp = 0;
         while (!isSorted) {
             isSorted = true;
             for (int j = 1; j < array.length; j++) {
 
                 if (array[j] < array[j - 1]) {
                     isSorted = false;
-                    m = array[j - 1];
+                    tmp = array[j - 1];
                     array[j - 1] = array[j];
-                    array[j] = m;
+                    array[j] = tmp;
                 }
             }
         }
